@@ -16,7 +16,7 @@ export default class RCommand extends Command {
             args: [
                 {
                     key: 'command',
-                    prompt: 'Which command would you like to view the help for?',
+                    prompt: '',
                     type: 'command',
                     default: '',
                 },

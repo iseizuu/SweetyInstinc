@@ -1,6 +1,7 @@
 import { CommandoClient } from 'discord.js-commando';
 import config from '../../config.json';
 import { join } from 'path';
+import LavaManager from './manager/Lavalink';
 
 export default class instincClient extends CommandoClient {
     config: {
@@ -8,6 +9,7 @@ export default class instincClient extends CommandoClient {
       color: string;
     };
     client: CommandoClient;
+    lava: LavaManager;
     constructor() {
         super({
             owner: ['271576733168173057'],
@@ -21,12 +23,14 @@ export default class instincClient extends CommandoClient {
             },
         });
         this.config = config;
+        this.lava = new LavaManager(this);
     };
 
     public _init(): void {
         this.registry
             .registerDefaultTypes()
             .registerGroups([
+                ['music', 'Music'],
                 ['util', 'Utilities'],
             ])
             .registerDefaultGroups()
