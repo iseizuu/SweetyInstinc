@@ -1,4 +1,11 @@
 {
     "prefix": "in.",
-    "color": "#7ddcff"
+    "color": "#7ddcff",
+    "nodes": [
+        {
+          "host": "urhost",
+          "port": urport,
+          "password": "pass"
+        }
+      ]
 }
