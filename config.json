@@ -1,11 +1,18 @@
 {
-    "prefix": "in.",
-    "color": "#7ddcff",
-    "nodes": [
-        {
-          "host": "urhost",
-          "port": urport,
-          "password": "pass"
-        }
-      ]
+  "prefix": "in.",
+  "color": "#ff709b",
+  "emojis": {
+    "confuse": "<:pening:765131551494897704>",
+    "chika": "<a:chikalalalala:765588983815340073>",
+    "no": "<a:wrong:764157090448932954>",
+    "yes": "<a:yes:740583418500481057>"
+  },
+  "nodes": [
+      {
+        "id": "main",
+        "host": "localhost",
+        "port": 2333,
+        "password": "anamazingpass"
+       }
+    ]
 }

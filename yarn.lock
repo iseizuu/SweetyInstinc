@@ -2,15 +2,6 @@
 # yarn lockfile v1
 
 
-"@anonymousg/lavajs@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@anonymousg/lavajs/-/lavajs-3.5.0.tgz#26890a05adda819df403cb6f5365c69716835883"
-  integrity sha512-rJHLqjTvh+eBjTxGGBBTqWw7YObL1tkQT5yCQppHDr+nKIrzNjtXw26stCowc/uCgoObcgJMZcT9t3qZz9MC/w==
-  dependencies:
-    events "^3.2.0"
-    node-fetch "^2.6.0"
-    ws "^7.3.1"
-
 "@babel/code-frame@^7.0.0":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -61,6 +52,11 @@
     lodash "^4.17.19"
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
+
+"@lavaclient/types@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lavaclient/types/-/types-1.0.2.tgz#21ff568294a31253becbc1c363592c5f3b9de902"
+  integrity sha512-7OmlW8PD0mU4n4qD79YiT86mJDMmV0qoPLdXnepqv067gf9204p5tXRrs/cr+vGljqewELyUtUuQd74rRTZViw==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -540,11 +536,6 @@ event-target-shim@^5.0.0:
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
-events@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/events/-/events-3.2.0.tgz#93b87c18f8efcd4202a461aec4dfc0556b639379"
-  integrity sha512-/46HWwbfCX2xTawVfkKLGxMifJYQBWMwY1mjywRtb4c9x8l5NP3KoJtnIOiL1hfdRkIuYhETxQlo62IF8tcnlg==
-
 fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -764,6 +755,14 @@ json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
   integrity sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=
+
+lavaclient@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lavaclient/-/lavaclient-3.1.2.tgz#7e7c4260adf65eeb4fe88a71330aa61f8dcb8f7f"
+  integrity sha512-kfY6/3zkWyv3fc+G/Br8aEWrRBxwhgQy8xA3cJmIAxRGey8TC4kCM0gXKbAQDqcEErSAakRln18f+uwUkOExPA==
+  dependencies:
+    "@lavaclient/types" "1.0.2"
+    ws "^7.3.1"
 
 levn@^0.4.1:
   version "0.4.1"

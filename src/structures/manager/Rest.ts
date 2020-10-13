@@ -2,7 +2,7 @@ import { nodes } from '../../../config.json';
 const fetch = require('node-superfetch');
 
 export default class Rest {
-    static async search(track: object) {
+    public static async search(track: string) {
         const { host, port, password } = nodes[0];
         const { body } = await (
             await fetch.get(`http://${host}:${port}/loadtracks?identifier=${track}`)
@@ -10,7 +10,7 @@ export default class Rest {
         );
         return body;
     }
-    static async decode(track: object) {
+    public static async decode(track: string) {
         const { host, port, password } = nodes[0];
         const { body } = await (
             await fetch.get(`http://${host}:${port}/decodetrack?track=${track}`)
