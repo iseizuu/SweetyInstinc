@@ -1,5 +1,4 @@
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
-// import LavaManager from '../../structures/manager/Lavalink';
 
 export default class PlayCommand extends Command {
     constructor(client: CommandoClient) {
@@ -23,11 +22,11 @@ export default class PlayCommand extends Command {
             ],
         });
     }
-    public async run(msg: CommandoMessage, { query }: any): Promise<any> {
-        const channel = msg.member.voice.channel;
+    public async run(msg: CommandoMessage, args: { query: string}): Promise<any> {
+        const channel = msg.member!.voice.channel;
         if (!channel) {
             return msg.say('you must join in voice channel first');
         }
-        (this.client as any).lava._play(msg, query);
+        (this.client as any).lava._play(msg, args.query);
     }
 }

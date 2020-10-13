@@ -6,6 +6,7 @@ import { TextChannel } from 'discord.js';
 export default class LavaManager {
     client: CommandoClient;
     manager: LavaClient;
+    lava: any;
     constructor(client: CommandoClient) {
         this.client = client;
         client.on('ready', async () => {
@@ -20,11 +21,11 @@ export default class LavaManager {
     }
 
     public async _play(msg: CommandoMessage, query: string) {
-        const channel = msg.member.voice.channel;
+        const channel = msg.member!.voice.channel;
         const player = this.manager.spawnPlayer({
             guild: msg.guild,
             voiceChannel: channel,
-            textChannel: (msg.channel as TextChannel),
+            textChannel: <TextChannel>msg.channel,
             deafen: true,
             volume: 100,
         },
@@ -43,11 +44,13 @@ export default class LavaManager {
         };
         if (Array.isArray(search)) {
             player.queue.add(search[0]);
-            msg.say(`Playing: ${search[0].title} By: ${search[0].author}`);
         }
         if (!player.playing) {
             player.play();
         }
+        this.manager.once('trackPlay', async (track) => {
+            return msg.say(`Now Playing: ${track.title} by: ${track.author}`);
+        });
         // eslint-disable-next-line no-shadow
         this.manager.once('queueOver', async (player: Player) => {
             await player.destroy();

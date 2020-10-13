@@ -3,9 +3,9 @@
     "color": "#7ddcff",
     "nodes": [
         {
-          "host": "urhost",
-          "port": urport,
-          "password": "pass"
+          "host": "localhost",
+          "port": 2333,
+          "password": "maiihaveurpass"
         }
       ]
 }
