@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "test": "node lib/index.js",
+    "release": "standard-version",
     "build": "tsc",
     "lint": "tslintn -p tsconfig.json"
   },
@@ -21,6 +22,7 @@
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.10.0",
     "eslint-config-google": "^0.14.0",
+    "standard-version": "^9.0.0",
     "typescript": "^4.0.3"
   },
   "dependencies": {
