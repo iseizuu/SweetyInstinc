@@ -1,3 +1,4 @@
+import { Message } from 'discord.js';
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
 import Client from '../../structures/Client';
 
@@ -16,7 +17,7 @@ export default class SkipCommand extends Command {
             },
         });
     }
-    public async run(msg: CommandoMessage): Promise<any> {
+    public async run(msg: CommandoMessage): Promise<Message | Message[]> {
         const voiceChannel = msg.member!.voice.channel;
         if (!voiceChannel) {
             return msg.say(`${(this.client as Client).config.emojis.no}** Request denied, You must join the voice channel first**`);
