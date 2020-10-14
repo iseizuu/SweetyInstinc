@@ -54,7 +54,7 @@ export default class Queue {
             .on('start', async () => {
                 try {
                     const embed = new MessageEmbed()
-                        .setAuthor(`Requester: ${this.current.user.tag}`, this.current.user.displayAvatarURL())
+                        .setTitle('<a:yt:765963899248967680> Now Playing')
                         .setDescription(`**[${this.current.info.title}](${this.current.info.uri}) [${this.current.duration}]**`)
                         .setColor(color)
                         .setThumbnail(this.current.thumbnail);
