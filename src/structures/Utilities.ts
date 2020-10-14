@@ -4,8 +4,6 @@ export default class Utilities {
         const MINUTE = SECOND * 60;
         const HOUR = MINUTE * 60;
         const seconds = Math.floor(duration / SECOND) % 60;
-        if (duration < MINUTE) return seconds === 1 ? 'a second' : `${seconds} seconds`;
-
         const minutes = Math.floor(duration / MINUTE) % 60;
         let output = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         if (duration >= HOUR) {
