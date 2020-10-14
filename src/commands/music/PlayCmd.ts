@@ -5,10 +5,10 @@ export default class PlayCommand extends Command {
     constructor(client: CommandoClient) {
         super(client, {
             name: 'play',
-            aliases: ['p'],
+            aliases: ['p', 'music'],
             group: 'music',
             memberName: 'playcmd',
-            description: 'Playing any songs',
+            description: 'Play any song or playlist from youtube or soundcloud',
             guildOnly: true,
             throttling: {
                 usages: 1,
