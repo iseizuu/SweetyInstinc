@@ -9,7 +9,7 @@ export default class SkipCommand extends Command {
             aliases: ['stop', 'stp'],
             group: 'music',
             memberName: 'skipcmd',
-            description: 'Skipped the current song',
+            description: 'Skip the current song',
             guildOnly: true,
             throttling: {
                 usages: 1,
@@ -28,6 +28,6 @@ export default class SkipCommand extends Command {
             return msg.say(`${(this.client as Client).config.emojis.no}** Request denied, You must join the same voice channel as me, on ${msg.guild.me.voice.channel.name}**`);
         }
         await player.stop();
-        return msg.say(`Skipped the current song: **[${player.queue.current.info.title}]**`);
+        return msg.say(`⏹ Skipped the current song: **[${player.queue.current.info.title}]**`);
     }
 }
