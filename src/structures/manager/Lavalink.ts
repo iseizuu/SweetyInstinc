@@ -21,7 +21,7 @@ export default class LavaManager {
         this.songs = this.manager.players;
     }
 
-    public async _play(msg: CommandoMessage, song: string) {
+    public async _play(msg: CommandoMessage, song: string): Promise<any> {
         const voiceChannel = msg.member!.voice.channel;
         try {
             const player = this.songs.get(msg.guild?.id) || (await this.manager.create(msg.guild?.id));
