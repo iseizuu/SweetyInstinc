@@ -61,6 +61,6 @@ export default class instincClient extends CommandoClient {
             console.log(`[INFO]:${this.user?.tag} Is Ready`);
         });
 
-        this.login(process.env.TOKEN2);
+        this.login(process.env.TOKEN);
     };
 };
