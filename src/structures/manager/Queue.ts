@@ -54,7 +54,7 @@ export default class Queue {
             .on('start', async () => {
                 try {
                     const embed = new MessageEmbed()
-                        .setAuthor(this.current.user.tag, this.current.user.displayAvatarURL())
+                        .setAuthor(`Requester: ${this.current.user.tag}`, this.current.user.displayAvatarURL())
                         .setDescription(`**[${this.current.info.title}](${this.current.info.uri}) [${this.current.duration}]**`)
                         .setColor(color)
                         .setThumbnail(this.current.thumbnail);
@@ -97,7 +97,7 @@ export default class Queue {
             return this.msg.channel.send({
                 embed: {
                     color: color,
-                    description: `${emojis.chika} **I ran out of the queue, So i will leave now..**`,
+                    description: `${emojis.chika} **Ran out of the queue, So i will leave now..**`,
                 },
             });
         case 'emptyVC':
