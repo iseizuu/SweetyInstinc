@@ -48,9 +48,9 @@
 		"space-infix-ops": "error",
 		"space-unary-ops": "error",
 		"spaced-comment": "error",
-        "yoda": "error",
-        "linebreak-style": "off",
-        "require-jsdoc": "off",
+		"yoda": "error",
+		"linebreak-style": "off",
+		"require-jsdoc": "off",
 		"indent": ["error", 4],
 		"max-len": "off"
     }
