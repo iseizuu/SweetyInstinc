@@ -3,12 +3,13 @@ import config from '../../config.json';
 import { join } from 'path';
 import LavaManager from './manager/Lavalink';
 import winston from 'winston';
+import Utilities from './Utilities';
 
 export default class instincClient extends CommandoClient {
-    [x: string]: any;
     config: {
       prefix: string;
       color: string;
+      token: string;
       emojis: {
           no: string;
           yes: string;
@@ -17,6 +18,7 @@ export default class instincClient extends CommandoClient {
     client: CommandoClient;
     lava: LavaManager;
     logger: winston.Logger;
+    util: Utilities;
     constructor() {
         super({
             owner: ['271576733168173057'],
@@ -61,8 +63,8 @@ export default class instincClient extends CommandoClient {
 
         // Process \\
 
-        process.on('unhandledRejection', (reason, promise) => {
-            this.logger.error('Unhandled rejection', { reason: reason, promise: promise });
+        process.on('unhandledRejection', (reason: {stack : string}, promise) => {
+            this.logger.warn(`Unhandled rejection: ${reason && reason.stack}`, { promise: promise });
         });
 
         // Lavaclient Events \\
@@ -80,6 +82,6 @@ export default class instincClient extends CommandoClient {
             this.logger.log('info', `${this.user?.tag} Is Ready`);
         });
 
-        this.login(process.env.TOKEN);
+        this.login(process.env.TOKEN ? process.env.TOKEN : this.config.token);
     };
 };
