@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.3.0...v1.4.0) (2020-10-16)
+
+
+### Features
+
+* add client login options ([65c607f](https://github.com/VeguiIzumi/SweetyInstinc/commit/65c607f2b2ae4e4dda16dd45e2a3f9a816800ee9))
+* add loop command ([cbb1527](https://github.com/VeguiIzumi/SweetyInstinc/commit/cbb15272a03065710efd0b3176fb621f323545e5))
+* add queue command ([7b6ac7d](https://github.com/VeguiIzumi/SweetyInstinc/commit/7b6ac7df0c2795186947b8a7c807e17bba4b36e7))
+* add skipall command to clear the queue ([280dfaf](https://github.com/VeguiIzumi/SweetyInstinc/commit/280dfafb315671c6ddf7e1ab448fa1a430c3b25a))
+* added token ([2ddfd8f](https://github.com/VeguiIzumi/SweetyInstinc/commit/2ddfd8fadcb5de8d11b1a7a274ea80d65271651c))
+* remove unnecessary ([6c11d9b](https://github.com/VeguiIzumi/SweetyInstinc/commit/6c11d9ba945e20c1c4c5c17c05a8fad86bcd048c))
+
+
+### Bug Fixes
+
+* fixed bad indents ([33b9682](https://github.com/VeguiIzumi/SweetyInstinc/commit/33b9682d5742ab65a1ebbd92a4f521d65a7ecf07))
+
 ## [1.3.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.2.0...v1.3.0) (2020-10-14)
 
 
