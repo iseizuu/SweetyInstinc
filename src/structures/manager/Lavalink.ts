@@ -54,7 +54,7 @@ export default class LavaManager {
                 if (!player.playing && !player.paused) {
                     await player.queue.start(msg);
                 }
-                if (player.queue.tracks.length === 0) return;
+                if (!player.queue.tracks.length) return;
                 return msg.embed({
                     color: color,
                     description: `${emojis.yes} **Added To Queue: __[${tracks[0].info.title}](${tracks[0].info.uri})__ Uploaded by: __${tracks[0].info.author}__**`,
