@@ -26,7 +26,7 @@ export default class LavaManager {
         try {
             const player = this.songs.get(msg.guild?.id) || (await this.manager.create(msg.guild?.id));
             if (player.playing && voiceChannel.id !== player.channel) {
-                return msg.say(`${emojis.confuse} Im already joined in **${msg.guild.me?.voice.channel.name}**`);
+                return msg.say(`${emojis.confuse} **Im already joined in** \`${msg.guild.me?.voice.channel.name}\``);
             }
             const connection = this.manager.sockets.get('main');
             if (!connection.connected) {
