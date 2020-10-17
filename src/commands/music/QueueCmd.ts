@@ -40,7 +40,7 @@ export default class QueueCommand extends Command {
             .setDescription(list[index].join('\n'))
             .setFooter(`Page: ${index + 1}/${list.length}`);
         const msgg = await msg.channel.send(embed);
-        if (list.length < 10) return;
+        if (queue.length < 10) return;
         for (const r of emoji) {
             await msgg.react(r);
         }
@@ -53,8 +53,14 @@ export default class QueueCommand extends Command {
 
         react.on('collect', (e: MessageReaction) => {
             const collect = e.emoji.name;
-            if (collect === emoji[0]) index--;
-            if (collect === emoji[1]) index++;
+            if (collect === emoji[0]) {
+                index--;
+                msgg.reactions.resolve(emoji[0]).users.remove(msg.author);
+            }
+            if (collect === emoji[1]) {
+                index++;
+                msgg.reactions.resolve(emoji[1]).users.remove(msg.author);
+            }
             index = ((index % list.length) + list.length) % list.length;
             msgg.edit({
                 embed: {
@@ -66,6 +72,10 @@ export default class QueueCommand extends Command {
                     },
                 },
             });
+        });
+
+        react.on('end', () => {
+            return msgg.reactions.removeAll();
         });
     }
 
