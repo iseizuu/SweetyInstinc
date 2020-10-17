@@ -10,6 +10,7 @@ export default class PlayCommand extends Command {
             memberName: 'playcmd',
             description: 'Play any song or playlist from youtube or soundcloud',
             guildOnly: true,
+            clientPermissions: ['CONNECT', 'VIEW_CHANNEL', 'SPEAK'],
             throttling: {
                 usages: 1,
                 duration: 5,
@@ -17,7 +18,7 @@ export default class PlayCommand extends Command {
             args: [
                 {
                     key: 'query',
-                    prompt: 'what the title of the song do you want to play?',
+                    prompt: 'What the title of the song do you want to play?',
                     type: 'string',
                 },
             ],
