@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.4.0...v1.5.0) (2020-10-17)
+
+
+### Features
+
+* add jump command ([de30ea3](https://github.com/VeguiIzumi/SweetyInstinc/commit/de30ea358ae8364aa1de4ed5fbbcc2fbb32d9a4c))
+* add remove command ([f815422](https://github.com/VeguiIzumi/SweetyInstinc/commit/f815422c53df00377c40282648064c618924fd07))
+* Update Lavalink.ts ([1cad615](https://github.com/VeguiIzumi/SweetyInstinc/commit/1cad61514759b428973aaadbcff6fee29001a895))
+
+
+### Bug Fixes
+
+* **bug:** fix reaction not showing ([d217226](https://github.com/VeguiIzumi/SweetyInstinc/commit/d217226e64f2fad02a98f761224776a2fb85d95f))
+
 ## [1.4.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.3.0...v1.4.0) (2020-10-16)
 
 
