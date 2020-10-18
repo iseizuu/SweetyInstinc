@@ -6,7 +6,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "test": "node lib/index.js",
+    "start": "node lib/src/index.js",
     "release": "standard-version",
     "build": "tsc",
     "lint": "tslintn -p tsconfig.json"
