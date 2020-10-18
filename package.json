@@ -1,7 +1,7 @@
 {
   "name": "sweetyinstinc",
   "version": "1.5.0",
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
   "files": [
     "lib/**/*"
   ],
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "common-tags": "^1.8.0",
-    "discord.js": "^12.3.1",
+    "discord.js": "discordjs/discord.js#master",
     "discord.js-commando": "Vernityz/Commando-re#master",
     "dotenv": "^8.2.0",
     "lavaclient": "^3.1.2",
