@@ -16,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
-    "@types/node": "^14.11.8",
+    "@types/node": "^14.11.10",
     "@types/ws": "^7.2.7",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
