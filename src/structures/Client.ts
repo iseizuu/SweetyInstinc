@@ -13,6 +13,7 @@ export default class instincClient extends CommandoClient {
       emojis: {
           no: string;
           yes: string;
+          confuse: string
       }
     };
     client: CommandoClient;
