@@ -69,7 +69,7 @@ export default class LyricCommand extends Command {
                 .setThumbnail(res[0].result.song_art_image_url);
             return msg.say(embed);
         }
-        return msg.say(`${(this.client as Client).config.emojis.no} **Lirycs to loong, handle limit soon...**`);
+        return msg.say(`${(this.client as Client).config.emojis.no} **Lyrics to loong**`);
     }
 
     public async getLyrics(url: string): Promise<String> {
