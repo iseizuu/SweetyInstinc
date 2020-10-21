@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.5.0...v1.7.0) (2020-10-21)
+
+
+### Features
+
+* add client permissions ([7931aa9](https://github.com/VeguiIzumi/SweetyInstinc/commit/7931aa9694da6fa9d64dfc7691d9095e6210de31))
+* add dependabot config ([ce3f4a3](https://github.com/VeguiIzumi/SweetyInstinc/commit/ce3f4a35eb34901ed1e16d4fad24c2f61211a39e))
+* add Lyric command ([8c0c557](https://github.com/VeguiIzumi/SweetyInstinc/commit/8c0c55790da5385d699666ac68607675e8bdee85))
+* add new type for config ([915ffc0](https://github.com/VeguiIzumi/SweetyInstinc/commit/915ffc0f064905b5241a1f192d0fed583a422769))
+* add Seek command ([acf867e](https://github.com/VeguiIzumi/SweetyInstinc/commit/acf867ef056d1fa9f505ba6f2a6350ed8a1bd716))
+
+## [1.6.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.5.0...v1.6.0) (2020-10-21)
+
+
+### Features
+
+* add client permissions ([7931aa9](https://github.com/VeguiIzumi/SweetyInstinc/commit/7931aa9694da6fa9d64dfc7691d9095e6210de31))
+* add dependabot config ([ce3f4a3](https://github.com/VeguiIzumi/SweetyInstinc/commit/ce3f4a35eb34901ed1e16d4fad24c2f61211a39e))
+* add Lyric command ([8c0c557](https://github.com/VeguiIzumi/SweetyInstinc/commit/8c0c55790da5385d699666ac68607675e8bdee85))
+* add new type for config ([915ffc0](https://github.com/VeguiIzumi/SweetyInstinc/commit/915ffc0f064905b5241a1f192d0fed583a422769))
+* add Seek command ([acf867e](https://github.com/VeguiIzumi/SweetyInstinc/commit/acf867ef056d1fa9f505ba6f2a6350ed8a1bd716))
+
 ## [1.5.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.4.0...v1.5.0) (2020-10-17)
 
 
