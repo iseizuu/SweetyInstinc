@@ -46,7 +46,7 @@ export default class LyricCommand extends Command {
         if (!args.query && !player) return msg.say('**There is no song playing right now!**');
         if (!args.query && player.playing) {
             args.query = player.queue.current.info.title
-                .replace(/(\(|\)|lyrics|lirik|official|music|video|\+|\[|\])/gi, '');
+                .replace(/(\(.+\)|lyrics|lirik|nighcore|official|music|video|\+|\[.+\])/gi, '');
         }
 
         const { body } = await req.get(`https://genius.com/api/search?q=${encodeURI(args.query)}`);
