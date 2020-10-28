@@ -89,25 +89,25 @@ export default class Queue {
 
     public async end(reason: string) {
         switch (reason) {
-        case '?':
-        default:
-            return await this.destroy();
-        case 'empty':
-            await this.destroy();
-            return this.msg.channel.send({
-                embed: {
-                    color: color,
-                    description: `${emojis.chika} **Ran out of the queue, So i will leave now..**`,
-                },
-            });
-        case 'emptyVC':
-            await this.destroy();
-            return this.msg.channel.send({
-                embed: {
-                    color: color,
-                    description: `${emojis.chika} **It looks like there\'s no one on the voice channel right now.., I\'ll go out and clear all queues**`,
-                },
-            });
+            case '?':
+            default:
+                return await this.destroy();
+            case 'empty':
+                await this.destroy();
+                return this.msg.channel.send({
+                    embed: {
+                        color: color,
+                        description: `${emojis.chika} **Ran out of the queue, So i will leave now..**`,
+                    },
+                });
+            case 'emptyVC':
+                await this.destroy();
+                return this.msg.channel.send({
+                    embed: {
+                        color: color,
+                        description: `${emojis.chika} **It looks like there\'s no one on the voice channel right now.., I\'ll go out and clear all queues**`,
+                    },
+                });
         }
     }
 
@@ -117,4 +117,5 @@ export default class Queue {
         if (!this.current) this.next();
         await this.player.play(this.current.song);
     }
-};
+}
+

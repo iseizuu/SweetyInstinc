@@ -7,14 +7,14 @@ import Utilities from './Utilities';
 
 export default class instincClient extends CommandoClient {
     config: {
-      prefix: string;
-      color: string;
-      token: string;
-      emojis: {
-          no: string;
-          yes: string;
-          confuse: string
-      }
+        prefix: string;
+        color: string;
+        token: string;
+        emojis: {
+            no: string;
+            yes: string;
+            confuse: string
+        }
     };
     client: CommandoClient;
     lava: LavaManager;

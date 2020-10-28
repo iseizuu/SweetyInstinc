@@ -45,32 +45,32 @@ export default class LavaManager {
 
             if (!player.queue) player.queue = new Queue(player);
             switch (loadType) {
-            case 'TRACK_LOADED':
-            case 'SEARCH_RESULT':
-                player.queue.add(tracks[0].track, tracks[0].info, msg.author);
-                if (!player.connected) {
-                    await player.connect(voiceChannel, { selfDeaf: true });
-                }
-                if (!player.playing && !player.paused) {
-                    await player.queue.start(msg);
-                }
-                if (!player.queue.tracks.length) return;
-                return msg.embed({
-                    color: color,
-                    description: `${emojis.yes} **Added To Queue: __[${tracks[0].info.title}](${tracks[0].info.uri})__ Uploaded by: __${tracks[0].info.author}__**`,
-                });
-            case 'PLAYLIST_LOADED':
-                tracks.map((x: {track: string, info: object}) => player.queue.add(x.track, x.info, msg.author));
-                if (!player.connected) {
-                    await player.connect(voiceChannel, { selfDeaf: true });
-                }
-                if (!player.playing && !player.paused) {
-                    await player.queue.start(msg);
-                }
-                return msg.embed({
-                    color: color,
-                    description: `${emojis.yes} Loaded Playlist: **__[${playlistInfo.name}]__ - __${tracks.length}__ Songs**`,
-                });
+                case 'TRACK_LOADED':
+                case 'SEARCH_RESULT':
+                    player.queue.add(tracks[0].track, tracks[0].info, msg.author);
+                    if (!player.connected) {
+                        await player.connect(voiceChannel, { selfDeaf: true });
+                    }
+                    if (!player.playing && !player.paused) {
+                        await player.queue.start(msg);
+                    }
+                    if (!player.queue.tracks.length) return;
+                    return msg.embed({
+                        color: color,
+                        description: `${emojis.yes} **Added To Queue: __[${tracks[0].info.title}](${tracks[0].info.uri})__ Uploaded by: __${tracks[0].info.author}__**`,
+                    });
+                case 'PLAYLIST_LOADED':
+                    tracks.map((x: {track: string, info: object}) => player.queue.add(x.track, x.info, msg.author));
+                    if (!player.connected) {
+                        await player.connect(voiceChannel, { selfDeaf: true });
+                    }
+                    if (!player.playing && !player.paused) {
+                        await player.queue.start(msg);
+                    }
+                    return msg.embed({
+                        color: color,
+                        description: `${emojis.yes} Loaded Playlist: **__[${playlistInfo.name}]__ - __${tracks.length}__ Songs**`,
+                    });
             }
         }
         catch (e) {

@@ -1,5 +1,5 @@
 import { stripIndents } from 'common-tags';
-import { MessageEmbed, TextChannel } from 'discord.js';
+import { Message, MessageEmbed } from 'discord.js';
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
 
 export default class HelpCommand extends Command {
@@ -25,7 +25,7 @@ export default class HelpCommand extends Command {
             ],
         });
     }
-    public async run(msg: CommandoMessage, { command }: any): Promise<any> {
+    public async run(msg: CommandoMessage, { command }: any): Promise<Message| Message[]> {
         if (!command) {
             const embed = new MessageEmbed()
                 .setAuthor(this.client.user.username, this.client.user.avatarURL())
@@ -34,7 +34,6 @@ export default class HelpCommand extends Command {
             for (const group of this.client.registry.groups.values()) {
                 const owner = this.client.isOwner(msg.author);
                 const commands = group.commands.filter((cmd) => {
-                    if (!owner && group.name === 'Nsfw' && !(msg.channel as TextChannel).nsfw) return;
                     if (owner) return true;
                     if (cmd.ownerOnly || cmd.hidden) return false;
                     return true;
@@ -47,24 +46,21 @@ export default class HelpCommand extends Command {
                 embed.setFooter(`${this.client.registry.commands.size} Commands`);
             }
             else {
-                if (!(msg.channel as TextChannel).nsfw) {
-                    embed.addField('》Nsfw', '`Only Visible In Nsfw Channel`');
-                }
-                embed.setFooter(`${msg.author.tag} ${cmdCount} Commands for you`);
+                embed.setFooter(`© VeguiIzumi | ${msg.author.tag} ${cmdCount} Commands for you`);
             }
             return msg.say(embed);
         }
         const embad = new MessageEmbed()
             .setTitle(`Command **${command.name}** ${command.guildOnly ? '  (Usable only in servers)' : ''}`)
             .setColor((this.client as any).config.color)
-            .setFooter(msg.author.tag, msg.author.displayAvatarURL())
+            .setFooter('© VeguiIzumi | ' + msg.author.tag, msg.author.displayAvatarURL())
             .setDescription(stripIndents`
-        》**Description:** ${command.description}${command.details ? `${command.details}` : ''}
-        》**Aliases:** ${command.aliases.join(', ') || 'None'}
-        》**Format:** ${msg.anyUsage(`${command.name} ${command.format || ''}`)}
-        》**Example:** ${command.examples ? command.examples : 'None'}
-        》**Group:** ${command.group.name} (\`${command.groupID}:${command.memberName}\`)
-        》**NSFW:** ${command.nsfw ? 'Yes' : 'No'}`)
+                》**Description:** ${command.description}${command.details ? `${command.details}` : ''}
+                》**Aliases:** ${command.aliases.join(', ') || 'None'}
+                》**Format:** ${msg.anyUsage(`${command.name} ${command.format || ''}`)}
+                》**Example:** ${command.examples ? command.examples : 'None'}
+                》**Group:** ${command.group.name} (\`${command.groupID}:${command.memberName}\`)
+                》**NSFW:** ${command.nsfw ? 'Yes' : 'No'}`)
             .setTimestamp();
         return msg.say(embad);
     }

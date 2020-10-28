@@ -13,7 +13,7 @@ interface LyricsResponse {
                     url: string
                     song_art_image_url: string
                 }
-            }
+            },
         ]
     }
 };
