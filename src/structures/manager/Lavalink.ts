@@ -5,9 +5,9 @@ import rest from './Rest';
 import Queue from './Queue';
 
 export default class LavaManager {
-    client: CommandoClient;
-    manager: Manager;
-    songs: any;
+    public client: CommandoClient;
+    public manager: Manager;
+    public songs: any;
     constructor(client: CommandoClient) {
         this.client = client;
         this.manager = new Manager(nodes, {
@@ -74,7 +74,7 @@ export default class LavaManager {
             }
         }
         catch (e) {
-            console.log(e);
+            this.client.logger.error(e);
             return msg.say(`${emojis.no} **Oh no, my devs is bad** \`${e}\``);
         }
     }

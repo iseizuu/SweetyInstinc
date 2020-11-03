@@ -29,7 +29,7 @@ export default class HelpCommand extends Command {
         if (!command) {
             const embed = new MessageEmbed()
                 .setAuthor(this.client.user.username, this.client.user.avatarURL())
-                .setColor((this.client as any).config.color);
+                .setColor(this.client.config.color);
             let cmdCount = 0;
             for (const group of this.client.registry.groups.values()) {
                 const owner = this.client.isOwner(msg.author);
@@ -52,7 +52,7 @@ export default class HelpCommand extends Command {
         }
         const embad = new MessageEmbed()
             .setTitle(`Command **${command.name}** ${command.guildOnly ? '  (Usable only in servers)' : ''}`)
-            .setColor((this.client as any).config.color)
+            .setColor(this.client.config.color)
             .setFooter('© VeguiIzumi | ' + msg.author.tag, msg.author.displayAvatarURL())
             .setDescription(stripIndents`
                 》**Description:** ${command.description}${command.details ? `${command.details}` : ''}

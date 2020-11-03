@@ -1,25 +1,17 @@
+/* eslint-disable no-invalid-this */
 import { CommandoClient } from 'discord.js-commando';
 import config from '../../config.json';
 import { join } from 'path';
 import LavaManager from './manager/Lavalink';
-import winston from 'winston';
+import winston, { Logger } from 'winston';
 import Utilities from './Utilities';
 
-export default class instincClient extends CommandoClient {
-    config: {
-        prefix: string;
-        color: string;
-        token: string;
-        emojis: {
-            no: string;
-            yes: string;
-            confuse: string
-        }
-    };
-    client: CommandoClient;
-    lava: LavaManager;
-    logger: winston.Logger;
-    util: Utilities;
+export default class InstincClient extends CommandoClient {
+    public readonly config: typeof config = config;
+    public readonly lava: LavaManager = new LavaManager(this);
+    public client: CommandoClient;
+    public logger: winston.Logger;
+    public util: Utilities;
     constructor() {
         super({
             owner: ['271576733168173057'],
@@ -33,7 +25,6 @@ export default class instincClient extends CommandoClient {
             },
         });
         this.config = config;
-        this.lava = new LavaManager(this);
         this.util = require('./Utilities');
         this.logger = winston.createLogger({
             transports: [new winston.transports.Console()],
@@ -45,7 +36,7 @@ export default class instincClient extends CommandoClient {
         });
     };
 
-    public _init(): void {
+    public init(): void {
         this.registry
             .registerDefaultTypes()
             .registerGroups([
@@ -84,5 +75,13 @@ export default class instincClient extends CommandoClient {
         });
 
         this.login(process.env.TOKEN ? process.env.TOKEN : this.config.token);
-    };
+    }
 };
+
+declare module 'discord.js-commando' {
+    export interface CommandoClient {
+        lava: LavaManager,
+        config: typeof config
+        logger: Logger
+    }
+}

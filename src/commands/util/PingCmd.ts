@@ -20,7 +20,7 @@ export default class PingCommand extends Command {
     public async run(msg: CommandoMessage): Promise<Message | Message[]> {
         const pingMsg = await msg.channel.send('pinging.....');
         const embed = new MessageEmbed()
-            .setColor((this.client as any).config.color)
+            .setColor(this.client.config.color)
             .setDescription(stripIndents`
         🏓 **Pong!** \`${(pingMsg.editedTimestamp || pingMsg.createdTimestamp) - (msg.editedTimestamp || msg.createdTimestamp)}ms.\`
         💖 **Heartbeat:** \`${this.client.ws.ping}ms\``);

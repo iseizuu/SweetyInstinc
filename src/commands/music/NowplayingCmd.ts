@@ -1,7 +1,6 @@
 import { stripIndent } from 'common-tags';
 import { Message } from 'discord.js';
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
-import Client from '../../structures/Client';
 import util from '../../structures/Utilities';
 
 export default class NowplayingCommand extends Command {
@@ -20,7 +19,7 @@ export default class NowplayingCommand extends Command {
         });
     }
     public async run(msg: CommandoMessage): Promise<Message | Message[]> {
-        const player = await (this.client as Client).lava.songs.get(msg.guild.id);
+        const player = await this.client.lava.songs.get(msg.guild.id);
         if (!player) return msg.say('**There is no song playing right now!**');
         const nowPlay = player.queue.current;
         return msg.embed({
@@ -32,7 +31,7 @@ export default class NowplayingCommand extends Command {
                 '-'.repeat(
                     20 - Math.floor((player.position / Number(nowPlay.info.length)) * 20),
                 )} \`${nowPlay.duration}\``,
-            color: (this.client as Client).config.color,
+            color: this.client.config.color,
             thumbnail: {
                 url: nowPlay.thumbnail,
             },

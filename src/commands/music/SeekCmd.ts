@@ -1,6 +1,5 @@
 import { Message } from 'discord.js';
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
-import Client from '../../structures/Client';
 import util from '../../structures/Utilities';
 
 export default class SeekCommand extends Command {
@@ -30,7 +29,7 @@ export default class SeekCommand extends Command {
         if (!args.number) {
             return msg.embed({
                 title: 'Example Usage',
-                color: (this.client as Client).config.color,
+                color: this.client.config.color,
                 fields: [
                     {
                         name: 'Example',
@@ -43,19 +42,19 @@ export default class SeekCommand extends Command {
         const dur = args.number.toString().split(' ');
         const channel = msg.member!.voice.channel;
         if (!channel) {
-            return msg.say(`${(this.client as Client).config.emojis.no}** Request denied, You must join the voice channel first**`);
+            return msg.say(`${this.client.config.emojis.no}** Request denied, You must join the voice channel first**`);
         }
-        const player = await (this.client as Client).lava.songs.get(msg.guild.id);
+        const player = await this.client.lava.songs.get(msg.guild.id);
         if (!player) return msg.say('**There is no song playing right now!**');
         if (player.playing && msg.author.id !== player.queue.current.user.id) {
-            return msg.say(`${(this.client as Client).config.emojis.no}** Request denied, Only song requester \`(${player.queue.current.user.tag})\` can seek this current song**`);
+            return msg.say(`${this.client.config.emojis.no}** Request denied, Only song requester \`(${player.queue.current.user.tag})\` can seek this current song**`);
         }
         const parse = (parseInt(dur[0], 10) * 60000) + ((parseInt(dur[1], 10) % 60000) * 1000);
         if (util.parseDuration(parse).replace(/:/g, '') > util.parseDuration(player.queue.current.info.length).replace(/:/g, '')) {
-            return msg.say(`${(this.client as Client).config.emojis.no} **Duration is too big, or maybe you put an invalid args**`);
+            return msg.say(`${this.client.config.emojis.no} **Duration is too big, or maybe you put an invalid args**`);
         }
         player.seek(parse);
-        return msg.say(`${(this.client as Client).config.emojis.yes} **Seek to [\`${util.parseDuration(parse)}\`]**`);
+        return msg.say(`${this.client.config.emojis.yes} **Seek to [\`${util.parseDuration(parse)}\`]**`);
     }
 }
 

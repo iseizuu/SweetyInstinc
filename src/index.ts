@@ -1,6 +1,6 @@
-require('dotenv').config();
-import instincClient from './structures/Client';
-// eslint-disable-next-line new-cap
-const client = new instincClient();
+import 'dotenv/config';
+import InstincClient from './structures/Client';
 
-client._init();
+const client = new InstincClient();
+
+client.init();

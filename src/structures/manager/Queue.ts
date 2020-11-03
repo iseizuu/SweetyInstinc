@@ -19,10 +19,10 @@ interface current {
 }
 
 export default class Queue {
-    tracks: any[];
-    msg: CommandoMessage;
-    loop: { queue: boolean; track: boolean; };
-    current: current;
+    public tracks: any[];
+    public msg: CommandoMessage;
+    public loop: { queue: boolean; track: boolean; };
+    public current: current;
     constructor(public player: Player) {
         this.player = player;
         this.loop = { queue: false, track: false };
@@ -58,7 +58,7 @@ export default class Queue {
                         .setDescription(`**[${this.current.info.title}](${this.current.info.uri}) [${this.current.duration}]**`)
                         .setColor(color)
                         .setThumbnail(this.current.thumbnail);
-                    if (this.tracks.length !== 0) {
+                    if (this.tracks.length) {
                         embed.addField('Next', `**[${this.tracks[0].info.title}](${this.tracks[0].info.uri})**`);
                     }
                     embed.setFooter(`Uploaded: ${this.current.info.author}`);

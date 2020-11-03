@@ -1,5 +1,4 @@
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
-import Client from '../../structures/Client';
 
 export default class PlayCommand extends Command {
     constructor(client: CommandoClient) {
@@ -27,8 +26,8 @@ export default class PlayCommand extends Command {
     public async run(msg: CommandoMessage, args: { query: string}): Promise<any> {
         const channel = msg.member!.voice.channel;
         if (!channel) {
-            return msg.say(`${(this.client as Client).config.emojis.no}** Request denied, You must join the voice channel first**`);
+            return msg.say(`${this.client.config.emojis.no}** Request denied, You must join the voice channel first**`);
         }
-        (this.client as Client).lava._play(msg, args.query);
+        this.client.lava._play(msg, args.query);
     }
 }

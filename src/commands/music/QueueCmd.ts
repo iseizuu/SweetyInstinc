@@ -1,7 +1,6 @@
 import { stripIndent } from 'common-tags';
 import { Message, MessageEmbed, MessageReaction, User } from 'discord.js';
 import { Command, CommandoClient, CommandoMessage } from 'discord.js-commando';
-import Client from '../../structures/Client';
 
 export default class QueueCommand extends Command {
     constructor(client: CommandoClient) {
@@ -19,15 +18,15 @@ export default class QueueCommand extends Command {
         });
     }
     public async run(msg: CommandoMessage): Promise<Message | Message[]> {
-        const player = await (this.client as Client).lava.songs.get(msg.guild.id);
+        const player = await this.client.lava.songs.get(msg.guild.id);
         if (!player) return msg.say('**There is no song playing right now!**');
         const queue = player.queue.tracks
             .map((x: { info: { title: string; uri: string; }; }, y: number) => stripIndent`
             **${y + 1} - [${x.info.title}](${x.info.uri})**`);
         if (!queue.length) {
             return msg.embed({
-                title: `${(this.client as Client).config.emojis.no} There is no queue`,
-                color: (this.client as Client).config.color,
+                title: `${this.client.config.emojis.no} There is no queue`,
+                color: this.client.config.color,
                 description: `**Current Track [${player.queue.current.info.title}](${player.queue.current.info.uri}) [${player.queue.current.duration}]**`,
             });
         }
@@ -36,7 +35,7 @@ export default class QueueCommand extends Command {
         let index = 0;
         const embed = new MessageEmbed()
             .setTitle(`🎵 Queue - ${queue.length} Songs`)
-            .setColor((this.client as Client).config.color)
+            .setColor(this.client.config.color)
             .setDescription(list[index].join('\n'))
             .setFooter(`Page: ${index + 1}/${list.length}`);
         const msgg = await msg.channel.send(embed);
@@ -65,7 +64,7 @@ export default class QueueCommand extends Command {
             msgg.edit({
                 embed: {
                     title: `🎵 Queue - ${queue.length} Songs`,
-                    color: (this.client as Client).config.color,
+                    color: this.client.config.color,
                     description: list[index].join('\n'),
                     footer: {
                         text: `Page: ${index + 1}/${list.length}`,
