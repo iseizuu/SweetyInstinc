@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.7.0...v1.8.0) (2020-11-03)
+
+
+### Features
+
+* add regex ([6e33411](https://github.com/VeguiIzumi/SweetyInstinc/commit/6e33411d613b8ea07f5c69969208c6b6d4f08109))
+* add search command ([6a85290](https://github.com/VeguiIzumi/SweetyInstinc/commit/6a8529071400cb81dcfb240f928531d0e680d18f))
+
+
+### Bug Fixes
+
+* **indents:** fix all indents error ([15309d9](https://github.com/VeguiIzumi/SweetyInstinc/commit/15309d9185026678809d3a2a42f744884243dd32))
+* **lyric:** grammar ([f6b4036](https://github.com/VeguiIzumi/SweetyInstinc/commit/f6b40369cc88347ffd17aafadc2f8b44cdbcad53))
+
 ## [1.7.0](https://github.com/VeguiIzumi/SweetyInstinc/compare/v1.5.0...v1.7.0) (2020-10-21)
 
 
