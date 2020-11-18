@@ -780,8 +780,8 @@ discord.js-commando@Vernityz/Commando-re#master:
 
 discord.js@discordjs/discord.js#master:
   version "12.4.1"
-  uid "7ec0bd93b0d7788e8ccf5576add37f7198be3f72"
-  resolved "https://codeload.github.com/discordjs/discord.js/tar.gz/7ec0bd93b0d7788e8ccf5576add37f7198be3f72"
+  uid "042e071a64b7c18f10b5aedeb0054b5ff70cf166"
+  resolved "https://codeload.github.com/discordjs/discord.js/tar.gz/042e071a64b7c18f10b5aedeb0054b5ff70cf166"
   dependencies:
     "@discordjs/collection" "^0.1.6"
     "@discordjs/form-data" "^3.0.1"
