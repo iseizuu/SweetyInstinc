@@ -773,7 +773,8 @@ dir-glob@^3.0.1:
 
 discord.js-commando@Vernityz/Commando-re#master:
   version "0.11.0-dev"
-  resolved "https://codeload.github.com/Vernityz/Commando-re/tar.gz/1e51370bd753342a975bd31fc43fdc57da1846dd"
+  uid "0256eaa5cf8100de24b491b96d07c3cf76c4d323"
+  resolved "https://codeload.github.com/Vernityz/Commando-re/tar.gz/0256eaa5cf8100de24b491b96d07c3cf76c4d323"
   dependencies:
     common-tags "^1.8.0"
     require-all "^3.0.0"
