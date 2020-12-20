@@ -9,11 +9,11 @@
     "yes": "<a:yes:740583418500481057>"
   },
   "nodes": [
-      {
-        "id": "main",
-        "host": "localhost",
-        "port": 2333,
-        "password": "anamazingpass"
-       }
-    ]
+    {
+      "id": "main",
+      "host": "localhost",
+      "port": 8888,
+      "password": "anamazingpass"
+    }
+  ]
 }
