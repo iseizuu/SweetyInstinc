@@ -19,7 +19,7 @@ Inviting Me to your server ? [Soon...]
 
 # Selfhosting
 #### [Note]
-This bot is using Lavalink for the audio, first you need to download and setup the Lavalink from [HERE](https://github.com/Frederikam/Lavalink).
+This bot is using Lavalink for the audio, first you need to download and setup the Lavalink from [HERE](https://github.com/freyacodes/Lavalink).
 * Installing
 ```bash
 # npm
